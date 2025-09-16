@@ -26,7 +26,7 @@ Rows without text were removed since text is the core feature.
 
 Text, CourseType, and post_type were merged into a single column called merged to be used for embeddings.
 
-The original Urgency(1-7) column was converted into a binary target called Urgency_binary: 0 for low urgency (<4) and 1 for high urgency (>=4).
+The Urgency(1-7) column was converted into a binary target called Urgency_binary: 0 for low urgency (<4) and 1 for high urgency (>=4).
 
 Categorical columns (CourseType, post_type, course_display_name) were encoded into numeric values for modeling.
 
@@ -34,7 +34,11 @@ Categorical columns (CourseType, post_type, course_display_name) were encoded in
 ## 📊 Correlation Analysis
 
 We analyzed numeric relationships between features using correlation heatmaps.
-Observations: Urgency(1-7) has a strong positive correlation with post_type and moderate correlation with CourseType. The encoded course_display_name has weak correlations but contributes as a categorical feature.
+
+Observations: Urgency(1-7) has a strong positive correlation with post_type and moderate correlation with CourseType. 
+
+The encoded course_display_name has weak correlations but contributes as a categorical feature.
+
 Scaling using StandardScaler does not affect correlations, only feature magnitudes.
 
 
@@ -84,6 +88,9 @@ Random Forest and SVM complement each other, while KNN is simpler but less effec
 ## 📝 Notes
 
 The project is modular and fully reproducible in Google Colab.
+
 All steps, including text preprocessing, feature engineering, scaling, and model training, are self-contained.
+
 The pipeline can be adapted for other text datasets with similar structure.
+
 Embeddings, scaling, and model parameters can be modified to experiment with different models and improve performance.
